@@ -4,10 +4,68 @@
     %meta{charset: "utf-8"}
     %meta{content: "IE=edge,chrome=1", http: {equiv: "X-UA-Compatible"}}
     %meta{name: "viewport", content: "width=device-width, initial-scale=1"}
-    %title= current_page.data.title || "The Middleman"
+
+    %title= current_page.data.title || "Recognition"
+
     = stylesheet_link_tag "application"
 
+
   %body{class: page_classes}
-    = yield
-    = javascript_include_tag "https://code.jquery.com/jquery-2.1.1.min.js"
-    = javascript_include_tag "application"
+    .container
+      .logo
+        %h1
+          Recognition meditation reminders
+        = link_to '/' do
+          = image_tag "logo.svg", :alt => "#{current_page.data.title}"
+      .tagline.half
+        %h2
+          A free tool,
+          %br
+          reminding you to meditate
+          %br
+          %span
+            2-5 seconds at a time.
+      .teaser-content.tablet.half
+        = partial "teaser"
+      .app-store.tablet.half
+        = partial "app-store"
+      .screenshots
+        .left
+          %p
+            Home screen
+        .middle
+          %p
+            Reminders edit screen
+        .right
+          %p
+            Reminders screen
+      .app-store.mobile.half
+        = partial "app-store"
+      .teaser-content.mobile
+        = partial "teaser"
+      .content
+        = yield
+
+      #footer
+        %p
+          Made by
+        = link_to "http://twitter.com/n13" do  
+          .creator
+            %p.name
+              Nik Heger
+            %p.work
+              concept / iOS
+            .right-arrow-small
+              Twitter, @n13 →
+        = link_to "http://yury.in/projects" do
+          .creator.second
+            %p.name
+              Yury Tsukerman
+            %p.work
+              design / web
+            .right-arrow-small
+              Homepage, yury.in →
+        %p.copyright
+          Copyright #{DateTime.now.strftime("%Y")}
+
+

@@ -1,0 +1,280 @@
+// Typography
+
+$base-font-size: rem(18)
+$base-line-height: rem(25)
+
+=font($a: none)
+  @if $a == bold
+    font-family: "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif
+    font-weight: 600
+    font-stretch: normal
+  @else if $a == medium
+    font-family: "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif
+    font-weight: 500
+    font-stretch: normal
+  @else if $a == light
+    font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif
+    font-weight: 300
+    font-stretch: normal
+  @else if $a == thin
+    font-family: "HelveticaNeueThin", "HelveticaNeue-Thin", "Helvetica Neue Thin", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif
+    font-weight: 200
+    font-stretch: normal
+  @else
+    font-family: "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif
+    font-weight: 400
+    font-stretch: normal
+// /typography
+
+
+// Colors
+
+$logotypeBlack: #000
+$logotypeLight: rgba(0, 0, 0, 0.61)
+$logotypeUnderlineLight: rgba(252, 84, 31, 0.32)
+$bodyTextOff: #9a9999
+$reddishOrange: #fc551f
+$paleSalmon: #fbc0ad
+$bodytext: #444444
+
+$mobileWidth: 260px
+$tabletWidth: 640px
+
+body
+  background-color: #FFF
+  color: $bodytext
+
+a
+  @include transition(color 0.2s ease)
+  &:hover
+    color: $reddishOrange
+
+p
+  font-size: rem(18)
+  line-height: rem(26)
+  letter-spacing: -0.5px
+  a
+    color: $bodytext
+    border-bottom: 3px solid $reddishOrange
+
+h3
+  +font(medium)
+  margin-bottom: 0.25em
+  font-size: rem(18)
+  letter-spacing: -0.5px
+
+.right-arrow
+  @include hide-text
+  width: 29px
+  height: 16px
+  background: no-repeat 0 0 url("/assets/images/arrow-right-large.svg") transparent
+  @include transition(margin-left 0.2s ease)
+  @include transition(margin-right 0.2s ease)
+  display: block
+  float: right
+  &:hover
+    margin-right: 2px
+    margin-left: -2px
+
+.right-arrow-small
+  @extend .right-arrow
+  background: no-repeat 0 0 url("/assets/images/arrow-right-small.svg") transparent
+  width: 17px
+  height: 10px
+  margin-right: 2px
+  @include transition(margin-right 0.2s ease)
+  &:hover
+    margin-right: 0
+
+.container
+  margin: 0 auto
+  width: 260px
+  height: 100vh
+
+  & > div
+    width: $mobileWidth
+    display: block
+    float: left
+    //padding: 2%
+
+  .tablet
+    display: none
+
+.logo
+  img
+    width: 158px
+    height: 41px
+  h1
+    @include hide-text
+    margin: 0
+    padding: 0
+
+.tagline
+  h2
+    +font
+    font-weight: regular
+    font-size: rem(20)
+    line-height: rem(28)
+    letter-spacing: -0.6px
+    span
+      +font(medium)
+      font-weight: medium
+
+.screenshots
+  height: 260px
+  margin-top: 2px
+  & > div
+    @include hide-text
+    float: left
+    height: $mobileWidth
+    position: relative
+    height: 260px
+    width: 140px
+  .left
+    background: no-repeat 0 0 url("/assets/images/left.png") transparent
+    z-index: 1
+  .middle
+    background: no-repeat 0 0 url("/assets/images/middle.png") transparent    
+    z-index: 2
+    background-size: 140px 242px
+    left: 54px
+    top: -260px
+  .right
+    background: no-repeat 0 0 url("/assets/images/right.png") transparent
+    z-index: 1
+    left: 143px
+    top: -520px
+  .left, .right
+    background-size: 115px 198px
+    background-position-y: 36%
+
+.app-store
+  width: $mobileWidth
+  margin-top: 10px
+
+.button
+  background: no-repeat 14px 12px url("/assets/images/iphone.svg") transparent
+  background-size: 18px 35px
+  padding: 5px 0px 0px 22px
+  margin: 0 auto
+  border: 2px solid $reddishOrange
+  width: 224px
+  .right-arrow
+    margin-top: -35px
+    margin-right: 14px
+    &:hover
+      margin-right: 12px
+  a, p
+    color: $reddishOrange
+  p
+    line-height: rem(26)
+    margin-left: 20px
+    &.small
+      font-size: rem(15)
+      margin-bottom: -10px
+      letter-spacing: -0.5px
+    &.big
+      font-size: rem(25)
+      margin-bottom: 8px
+      letter-spacing: -1px    
+
+.teaser-content.mobile
+  margin-top: 40px
+
+.content
+  margin-bottom: 20em
+
+#footer
+  p
+    color: $logotypeBlack
+    margin-bottom: 2px
+    &.work
+      color: $bodytext
+    &.copyright
+      margin-top: 2px
+      margin-bottom: 14px
+  .creator
+    border-bottom: 3px solid $reddishOrange
+    float: left
+    width: 100%
+    margin-bottom: 4px
+    p
+      float: left
+      margin-right: 6px
+      margin-bottom: 1px
+    .right-arrow-small
+      margin-top: 6px
+
+@include min-screen(640px)
+  .tagline h2, h3, p
+    font-size: rem(22)
+    line-height: rem(32)
+  h3
+    +font(medium)
+    margin-bottom: 0
+  .container
+    width: $tabletWidth
+    .half
+      width: 320px
+    .logo
+      width: $tabletWidth
+      img
+        width: 191px
+        height: 51px
+    .app-store.tablet
+      width: 240px
+    .button
+      background-size: 18px 35px
+      padding: 5px 0px 0px 22px
+      margin: 0 auto
+      border: 2px solid $reddishOrange
+      width: 214px        
+    .mobile
+      display: none
+    .teaser-content
+      float: right
+    .tablet
+      display: block
+    .screenshots
+      width: $tabletWidth
+      height: 474px
+      margin-top: 50px
+      & > div
+        height: 474px
+      .left, .right
+        background-size: 214px 381px
+        width: 214px
+      .left
+        top: -7px
+      .right
+        left: 427px
+        top: -478px
+      .middle
+        background-size: 260px 474px
+        width: 260px
+        left: -12px
+        top: -20px
+    .content
+      width: $tabletWidth
+      margin-top: 20px
+    #footer
+      width: $tabletWidth
+      p
+        font-size: rem(16)
+        line-height: rem(18)
+        &.copyright
+          display: block
+          float: left
+          width: 100%
+      .creator
+        width: $mobileWidth
+        float: left
+        margin-bottom: 12px
+        margin-top: 6px
+        p
+          letter-spacing: -0.5px
+          margin-bottom: 3px
+        .right-arrow-small
+          margin-top: 2px
+        &.second
+          float: right

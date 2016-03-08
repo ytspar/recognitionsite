@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="30px" height="17px" viewBox="0 0 30 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>right arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mobile-Portrait" transform="translate(-229.000000, -452.000000)" stroke="#FC551F" stroke-width="2">
+            <g id="Apple-App-Store" transform="translate(43.000000, 432.000000)">
+                <g id="right-arrow" transform="translate(186.000000, 20.000000)">
+                    <path d="M0.439393939,8.42105263 L24.1666667,8.42105263 M20.2121212,16 L28.1698839,8.37441252 L20.217349,0.753834584" id="arrow"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

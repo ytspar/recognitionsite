@@ -24,3 +24,7 @@ activate :deploy do |deploy|
   deploy.build_before = true
   deploy.deploy_method = :git
 end
+
+after_configuration do
+  sprockets.append_path File.join root.to_s, "bower_components"
+end
