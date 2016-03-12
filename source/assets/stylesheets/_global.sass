@@ -37,7 +37,7 @@ $reddishOrange: #fc551f
 $paleSalmon: #fbc0ad
 $bodytext: #444444
 
-$mobileWidth: 260px
+$mobileWidth: 320px
 $tabletWidth: 640px
 
 body
@@ -88,7 +88,7 @@ h3
 
 .container
   margin: 0 auto
-  width: 260px
+  width: $mobileWidth
   height: 100vh
 
   & > div
@@ -99,6 +99,10 @@ h3
 
   .tablet
     display: none
+
+  .app-store
+    width: $mobileWidth
+    margin-top: 12px
 
 .logo
   img
@@ -113,68 +117,67 @@ h3
   h2
     +font
     font-weight: regular
-    font-size: rem(20)
-    line-height: rem(28)
+    font-size: rem(22)
+    line-height: rem(32)
     letter-spacing: -0.6px
     span
       +font(medium)
       font-weight: medium
 
 .screenshots
-  height: 260px
+  height: 320px
   margin-top: 2px
   & > div
     @include hide-text
     float: left
     height: $mobileWidth
     position: relative
-    height: 260px
-    width: 140px
   .left
     background: no-repeat 0 0 url("/assets/images/left.png") transparent
     z-index: 1
+    top: 50px
   .middle
     background: no-repeat 0 0 url("/assets/images/middle.png") transparent    
     z-index: 2
-    background-size: 140px 242px
-    left: 54px
-    top: -260px
+    background-size: 175px 302.5px
+    height: 303px
+    width: 175px
+    left: -40px
   .right
     background: no-repeat 0 0 url("/assets/images/right.png") transparent
     z-index: 1
-    left: 143px
-    top: -520px
+    left: 204px
+    top: -253px
   .left, .right
     background-size: 115px 198px
     background-position-y: 36%
-
-.app-store
-  width: $mobileWidth
-  margin-top: 15px
+    width: 115px
+    height: 198px
 
 .button
   background: no-repeat 14px 8px url("/assets/images/iphone.svg") transparent
   background-size: 18px 35px
-  padding: 2px 0px 0px 20px
+  padding: 2px 0 0 0
   margin: 0 auto
   border: 2px solid $reddishOrange
   width: 200px
   .right-arrow
     margin-top: -33px
-    margin-right: 14px
+    margin-right: 4px
+    background-size: 23px 17px
     &:hover
-      margin-right: 12px
+      margin-right: 2px
   a, p
     color: $reddishOrange
   p
     line-height: rem(26)
-    margin-left: 20px
+    margin-left: 40px
     &.small
-      font-size: rem(15)
+      font-size: rem(14)
       margin-bottom: -10px
       letter-spacing: -0.5px
     &.big
-      font-size: rem(25)
+      font-size: rem(21)
       margin-bottom: 6px
       letter-spacing: -1px    
 
@@ -210,7 +213,7 @@ h3
       margin-top: 6px
 
 @include min-screen(640px)
-  .tagline h2, h3, p
+  h3, p
     font-size: rem(22)
     line-height: rem(32)
   h3
@@ -226,13 +229,18 @@ h3
         width: 191px
         height: 51px
     .app-store.tablet
-      width: 240px
+      width: 220px
     .button
       background-size: 18px 35px
-      padding: 3px 0px 0px 22px
+      padding: 3px 0 0 0
       margin: 0 auto
       border: 2px solid $reddishOrange
-      width: 214px        
+      width: 220px
+      .right-arrow
+        background-size: 29px
+        margin-right: 10px
+        &:hover
+          margin-right: 8px   
     .mobile
       display: none
     .teaser-content
@@ -271,7 +279,7 @@ h3
           float: left
           width: 100%
       .creator
-        width: $mobileWidth
+        width: $mobileWidth - 20px
         float: left
         margin-bottom: 12px
         margin-top: 6px
